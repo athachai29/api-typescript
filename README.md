@@ -6,3 +6,7 @@
  * GET /user/:username/repos เรียกใช้ func ที่สร้าง และ แสดง repos ของ user นั้น ๆ
  
  ** โดยทุกการประกาศตัวแปรจะต้องกำหนด Type หรือ Interface
+
+API: https://api.github.com/users
+- เส้น GET user = /:username
+- เส้น GET repos = /:username/repos
