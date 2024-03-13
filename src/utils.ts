@@ -1,8 +1,8 @@
 import https from 'https';
 
-import { IUserResponse, IReposResponse } from '../types/github';
+import { IGithubCallerResponse } from '../types/github';
 
-export const githubCaller = (path: string): Promise<IUserResponse | IReposResponse> => {
+export const githubCaller = (path: string): Promise<IGithubCallerResponse> => {
     const GITHUB_ENDPOINT: string = 'https://api.github.com';
 
     const options: object = {
@@ -11,7 +11,7 @@ export const githubCaller = (path: string): Promise<IUserResponse | IReposRespon
         }
     };
 
-    const caller: Promise<IUserResponse | IReposResponse> = new Promise((resolve, reject) => {
+    const caller: Promise<IGithubCallerResponse> = new Promise((resolve, reject) => {
         https.get(`${GITHUB_ENDPOINT}${path}`, options, (res) => {
             let data: string = '';
             res.on('data', (chunk) => {

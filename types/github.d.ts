@@ -109,12 +109,7 @@ export interface IGithubRepo {
   default_branch: string;
 }
 
-export interface IUserResponse {
+export interface IGithubCallerResponse {
   status: string;
-  data: IGithubProfile;
-}
-
-export interface IReposResponse {
-  status: string;
-  data: IGithubRepo;
+  data: IGithubProfile | IGithubRepo;
 }
